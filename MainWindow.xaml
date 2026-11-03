@@ -1,0 +1,58 @@
+﻿<Window x:Class="InventoryOfEquipmentInAPolyclinic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryOfEquipmentInAPolyclinic" 
+        xmlns:vm="clr-namespace:InventoryOfEquipmentInAPolyclinic.ViewModels"
+        xmlns:views="clr-namespace:InventoryOfEquipmentInAPolyclinic.Views"
+        mc:Ignorable="d"
+        Title="Инвентаризация оборудования" Height="720" Width="1280"
+        Background="{StaticResource BackgroundColor}">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Шапка -->
+            <RowDefinition Height="*"/>
+            <!-- Контент -->
+        </Grid.RowDefinitions>
+
+        <!-- Шапка с пользователем -->
+        <Border Grid.Row="0" Background="#2C3E50" Padding="10">
+            <Grid>
+                <TextBlock Text="Система инвентаризации" Foreground="White" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding CurrentUserName}" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                    <Button Content="Выйти" Click="LogoutButton_Click" Background="#E74C3C" Margin="10,0,0,0"/>
+                    <Border Background="#E74C3C" CornerRadius="5" Padding="5,2">
+                        <TextBlock Text="{Binding CurrentUserRole}" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <TabControl Grid.Row="1" Margin="10">
+            <TabItem Header="Оборудование">
+                <views:EquipmentView DataContext="{Binding}"/>
+            </TabItem>
+            <TabItem Header="Справочники" Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <views:DictionariesView DataContext="{Binding}"/>
+            </TabItem>
+            <TabItem Header="Статистика">
+                <views:StatisticsView DataContext="{Binding}"/>
+            </TabItem>
+            <TabItem Header="Журнал" Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <views:LogView DataContext="{Binding}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+    <Window.InputBindings>
+        <KeyBinding Key="Delete" Command="{Binding DeleteEquipmentCommand}"/>
+    </Window.InputBindings>
+</Window>
