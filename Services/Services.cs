@@ -20,7 +20,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
 
         public DatabaseContext()
         {
-            SeedData(); // Заполняем тестовыми данными из скриншотов
+            SeedData();
         }
 
         private void SeedData()
@@ -57,7 +57,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
             Employees.Add(new Employee { Id = 3, FullName = "Тимошенко Пётр Игоревич", PositionId = 3, DepartmentId = 3 });
             Employees.Add(new Employee { Id = 4, FullName = "Глухарев Акакий Иоанович", PositionId = 4, DepartmentId = 4 });
 
-            // Оборудование (первые 5 строк из скрина)
+            // Оборудование
             Equipments.Add(new Equipment { Id = 1, Name = "Аппарат УЗИ", Model = "Mindray DC-70", SerialNumber = "SN-MD-874512", ReleaseDate = new DateTime(2021, 03, 15), CommissionDate = new DateTime(2021, 05, 10), ServiceLife = 10, StatusId = 1, CabinetId = 1, EmployeeId = 1 });
             Equipments.Add(new Equipment { Id = 2, Name = "Электрокардиограф", Model = "SCHILLER CARDIODIT AT-102", SerialNumber = "SN-SHD-20026", ReleaseDate = new DateTime(2019, 11, 22), CommissionDate = new DateTime(2020, 01, 15), ServiceLife = 8, StatusId = 1, CabinetId = 1, EmployeeId = 2 });
             Equipments.Add(new Equipment { Id = 3, Name = "Тонометр", Model = "Omron M3 Comfort", SerialNumber = "SN-SX-84892", ReleaseDate = new DateTime(2022, 07, 08), CommissionDate = new DateTime(2022, 08, 20), ServiceLife = 5, StatusId = 1, CabinetId = 2, EmployeeId = 3 });

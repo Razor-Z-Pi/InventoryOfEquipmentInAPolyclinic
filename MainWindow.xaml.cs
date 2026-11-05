@@ -26,8 +26,6 @@ namespace InventoryOfEquipmentInAPolyclinic
             this.InputBindings.Add(new KeyBinding(
                 new RelayCommand(() =>
                 {
-                    // Находим EquipmentView и фокусируем TextBox
-                    // Это упрощенный вариант, лучше использовать Attached Properties
                 }),
                 Key.N, ModifierKeys.Control));
         }
@@ -57,6 +55,11 @@ namespace InventoryOfEquipmentInAPolyclinic
         {
             App.CurrentUser = null;
             this.Close(); // Закроется главное окно, приложение завершится или покажет Login
+        }
+
+        private void OpenSettings_Click(object sender, RoutedEventArgs e)
+        {
+            new SettingsWindow().ShowDialog();
         }
     }
 }

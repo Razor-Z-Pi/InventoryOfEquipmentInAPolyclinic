@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:InventoryOfEquipmentInAPolyclinic.ViewModels"
         xmlns:views="clr-namespace:InventoryOfEquipmentInAPolyclinic.Views"
         mc:Ignorable="d"
-        Title="Инвентаризация оборудования" Height="720" Width="1280"
+        Title="Инвентаризация оборудования" Height="1050" Width="1280"
         Background="{StaticResource BackgroundColor}">
 
     <Window.DataContext>
@@ -28,8 +28,11 @@
                 <TextBlock Text="Система инвентаризации" Foreground="White" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Content="Настройки БД" Click="OpenSettings_Click" Background="#95A5A6" Margin="5,0" Width="100"/>
+                    <Button Content="Бэкап" Command="{Binding CreateBackupCommand}" Background="#27AE60" Margin="5,0" Width="50"/>
+                    <Button Content="Восстановить" Command="{Binding RestoreBackupCommand}" Background="#E67E22" Margin="5,0" Width="100" Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     <TextBlock Text="{Binding CurrentUserName}" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                    <Button Content="Выйти" Click="LogoutButton_Click" Background="#E74C3C" Margin="10,0,0,0"/>
+                    <Button Content="Выйти" Click="LogoutButton_Click" Background="#E74C3C" Margin="10,0,0,0" Width="50"/>
                     <Border Background="#E74C3C" CornerRadius="5" Padding="5,2">
                         <TextBlock Text="{Binding CurrentUserRole}" Foreground="White" FontSize="12" FontWeight="Bold"/>
                     </Border>
@@ -51,6 +54,12 @@
                 <views:LogView DataContext="{Binding}"/>
             </TabItem>
         </TabControl>
+
+        <Border Grid.RowSpan="2" Background="#2ECC71" CornerRadius="5" Padding="15,10" 
+            HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"
+            Visibility="{Binding IsToastVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="{Binding ToastMessage}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        </Border>
     </Grid>
     <Window.InputBindings>
         <KeyBinding Key="Delete" Command="{Binding DeleteEquipmentCommand}"/>

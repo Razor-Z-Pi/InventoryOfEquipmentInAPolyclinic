@@ -28,15 +28,12 @@ namespace InventoryOfEquipmentInAPolyclinic.Services.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Строка подключения: Server=localhost;Port=3306;Database=clinic_inventory;User=root;Password=;
-                optionsBuilder.UseMySql(
-                    "Server=localhost;Port=3306;Database=clinic_inventory;User=root;Password=;",
-                    ServerVersion.AutoDetect("Server=localhost;Port=3306;Database=clinic_inventory;User=root;Password=;")
-                );
+                string connectionString = ConfigService.GetConnectionString();
+                optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
         }
 
-        // Настройка связей (аналог Foreign Keys из ваших скриншотов)
+        // Настройка связей
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Связь Оборудование -> Статус
@@ -60,19 +57,19 @@ namespace InventoryOfEquipmentInAPolyclinic.Services.Data
                 .HasForeignKey(e => e.EmployeeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // 1. Адреса
+            // Адреса
             modelBuilder.Entity<Address>().HasData(
                 new Address { Id = 1, FullAddress = "Г. Абакан, ул. Джугашвили, 67" }
             );
 
-            // 2. Статусы
+            // Статусы
             modelBuilder.Entity<EquipmentStatus>().HasData(
                 new EquipmentStatus { Id = 1, Name = "В эксплуатации" },
                 new EquipmentStatus { Id = 2, Name = "На ремонте" },
                 new EquipmentStatus { Id = 3, Name = "списано" }
             );
 
-            // 3. Должности
+            // Должности
             modelBuilder.Entity<Position>().HasData(
                 new Position { Id = 1, Name = "Старшая медсестра" },
                 new Position { Id = 2, Name = "Врач-терапевт" },
@@ -80,7 +77,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Services.Data
                 new Position { Id = 4, Name = "Главврач" }
             );
 
-            // 4. Подразделения
+            // Подразделения
             modelBuilder.Entity<Department>().HasData(
                 new Department { Id = 1, Name = "Отделение ультразвуковой диагностики" },
                 new Department { Id = 2, Name = "Отделение функциональной диагностики" },
@@ -88,7 +85,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Services.Data
                 new Department { Id = 4, Name = "Административно-управленческий персонал (АУП)" }
             );
 
-            // 5. Кабинеты (Внимание: AddressId = 1)
+            // Кабинеты (Внимание: AddressId = 1)
             modelBuilder.Entity<Cabinet>().HasData(
                 new Cabinet { Id = 1, AddressId = 1, Name = "Кабинет терапевта", Floor = 3, CabinetNumber = "301" },
                 new Cabinet { Id = 2, AddressId = 1, Name = "Кабинет гинеколога", Floor = 3, CabinetNumber = "314" },
@@ -96,7 +93,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Services.Data
                 new Cabinet { Id = 4, AddressId = 1, Name = "Стерилизационная", Floor = 1, CabinetNumber = "111" }
             );
 
-            // 6. Сотрудники (PositionId и DepartmentId из таблиц выше)
+            // Сотрудники (PositionId и DepartmentId из таблиц выше)
             modelBuilder.Entity<Employee>().HasData(
                 new Employee { Id = 1, FullName = "Иванова Мария Петровна", PositionId = 1, DepartmentId = 1 },
                 new Employee { Id = 2, FullName = "Козлов Иван Валерьевич", PositionId = 2, DepartmentId = 2 },

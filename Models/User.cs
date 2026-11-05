@@ -14,7 +14,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Models
 
         public string Username { get; set; } = string.Empty;
 
-        public string PasswordHash { get; set; } = string.Empty; // В реальном проекте используйте BCrypt!
+        public string PasswordHash { get; set; } = string.Empty;
 
         public string Role { get; set; } = "User"; // "Admin" или "User"
     }

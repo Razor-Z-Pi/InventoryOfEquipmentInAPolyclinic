@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\views\\dictionariesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:views\\dictionariesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\views\\equipmentview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:views\\equipmentview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\models\\equipmentdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:models\\equipmentdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\settingswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:settingswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\services\\configservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:services\\configservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\settingswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:settingswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\services\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:services\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\services\\backupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:services\\backupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\inventoryofequipmentinapolyclinic\\inventoryofequipmentinapolyclinic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{154F11E8-F386-429C-933A-571DA22EE7B3}|InventoryOfEquipmentInAPolyclinic.csproj|solutionrelative:inventoryofequipmentinapolyclinic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DictionariesView.xaml",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Views\\DictionariesView.xaml",
+              "RelativeDocumentMoniker": "Views\\DictionariesView.xaml",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Views\\DictionariesView.xaml",
+              "RelativeToolTip": "Views\\DictionariesView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-05T12:23:17.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SettingsWindow.xaml.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\SettingsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SettingsWindow.xaml.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\SettingsWindow.xaml.cs",
+              "RelativeToolTip": "SettingsWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:18:06.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SettingsWindow.xaml",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\SettingsWindow.xaml",
+              "RelativeDocumentMoniker": "SettingsWindow.xaml",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\SettingsWindow.xaml",
+              "RelativeToolTip": "SettingsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-05T11:17:24.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Services\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Services\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwF8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:15:35.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ConfigService.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\ConfigService.cs",
+              "RelativeDocumentMoniker": "Services\\ConfigService.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\ConfigService.cs",
+              "RelativeToolTip": "Services\\ConfigService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:14:57.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EquipmentView.xaml",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Views\\EquipmentView.xaml",
+              "RelativeDocumentMoniker": "Views\\EquipmentView.xaml",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Views\\EquipmentView.xaml",
+              "RelativeToolTip": "Views\\EquipmentView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-05T11:01:15.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EquipmentDisplay.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Models\\EquipmentDisplay.cs",
+              "RelativeDocumentMoniker": "Models\\EquipmentDisplay.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Models\\EquipmentDisplay.cs",
+              "RelativeToolTip": "Models\\EquipmentDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:01:09.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-05T10:51:26.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAcAAADmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-05T11:33:42.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-05T11:20:44.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PdfService.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\PdfService.cs",
+              "RelativeDocumentMoniker": "Services\\PdfService.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\PdfService.cs",
+              "RelativeToolTip": "Services\\PdfService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:24:12.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-05T11:32:57.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAALACAAAAAAAAAAAmwPkCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T10:53:57.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T10:50:51.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BackupService.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\BackupService.cs",
+              "RelativeDocumentMoniker": "Services\\BackupService.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\Services\\BackupService.cs",
+              "RelativeToolTip": "Services\\BackupService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T11:11:46.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "InventoryOfEquipmentInAPolyclinic.csproj",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
+              "RelativeDocumentMoniker": "InventoryOfEquipmentInAPolyclinic.csproj",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
+              "RelativeToolTip": "InventoryOfEquipmentInAPolyclinic.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-05T10:50:10.154Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

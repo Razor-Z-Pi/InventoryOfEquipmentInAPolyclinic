@@ -11,9 +11,8 @@
                 <!-- Графики -->
             </Grid.RowDefinitions>
 
-            <!-- Панель с цифрами (оставляем как было) -->
+            <!-- Панель с цифрами -->
             <WrapPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,20">
-                <!-- ... ваши Border с карточками статистики ... -->
             </WrapPanel>
 
             <!-- Панель с графиками -->

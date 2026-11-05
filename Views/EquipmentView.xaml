@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000">
+             d:DesignHeight="600" d:DesignWidth="1100">
 
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
@@ -42,12 +42,13 @@
                     <TextBlock Text="Сотрудник:" VerticalAlignment="Center" Margin="0,0,5,0"/>
                     <ComboBox ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" DisplayMemberPath="FullName" Width="180" Margin="0,0,20,0"/>
 
-                    <Button Content="Добавить" Command="{Binding AddEquipmentCommand}" Background="#2ECC71"/>
+                    <Button Content="Добавить" Command="{Binding AddEquipmentCommand}" Background="#2ECC71" Width="100" Height="30"/>
                     <Button Content="Удалить выбранное" 
                         Command="{Binding DeleteEquipmentCommand}" 
                         Background="#E74C3C"
-                        Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                    <Button Content="Обновить данные" Click="OnRefreshClick" Background="#3498DB"/>
+                        Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Width="120" Height="30"/>
+                    <Button Content="Обновить данные" Click="OnRefreshClick" Background="#3498DB" Width="120" Height="30"/>
                 </StackPanel>
 
                 <!-- Третья строка: Поиск -->
@@ -55,8 +56,11 @@
                     <TextBlock Text="Поиск:" VerticalAlignment="Center" Margin="0,0,5,0" FontWeight="Bold"/>
                     <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="250" Padding="5"/>
 
-                    <Button Content="Экспорт в Excel" Command="{Binding ExportToExcelCommand}" Background="#27AE60" Margin="5,0"/>
-                    <Button Content="Экспорт в PDF" Command="{Binding ExportToPdfCommand}" Background="#C0392B" Margin="5,0"/>
+                    <Button Content="Экспорт в Excel" Command="{Binding ExportToExcelCommand}" Background="#27AE60" Margin="5,0" Width="100" Height="30"/>
+                    <Button Content="Экспорт в PDF" Command="{Binding ExportToPdfCommand}" Background="#C0392B" Margin="5,0" Width="100" Height="30"/>
+                    <Button Content="Отправить выбранные в ремонт" Command="{Binding MarkAsRepairCommand}" Background="#F39C12" Width="200" Height="30"/>
+                    <Button Content="Импорт из Excel" Command="{Binding ImportFromExcelCommand}" Background="#8E44AD" Margin="5,0" Width="100" Height="30" Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Button Content="Распечатать акт списания" Command="{Binding GenerateWriteOffActCommand}" Background="#C0392B" Margin="5,0" Width="170" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -65,6 +69,8 @@
         <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="10">
             <DataGrid ItemsSource="{Binding EquipmentsDisplay}"
                       SelectedItem="{Binding SelectedEquipment}"
+                      SelectionMode="Extended"
+                      SelectionUnit="FullRow"
                       AutoGenerateColumns="False"
                       CanUserAddRows="False"
                       IsReadOnly="False"
@@ -156,6 +162,13 @@
                         <TextBlock Text="{Binding SelectedEquipment.ExpirationDate, StringFormat='Дата окончания: {0:dd.MM.yyyy}'}" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
                     </StackPanel>
                 </Border>
+
+                <TextBlock Text="Изменить статус:" FontWeight="Bold" Foreground="Gray" Margin="0,10,0,5"/>
+                <ComboBox ItemsSource="{Binding Statuses}" 
+                          SelectedItem="{Binding SelectedEquipmentStatus, UpdateSourceTrigger=PropertyChanged}"
+                          DisplayMemberPath="Name" 
+                          Width="200" HorizontalAlignment="Left"/>
+                <Button Content="Применить статус" Command="{Binding UpdateStatusCommand}" Background="#F39C12" Margin="0,5,0,0" Width="170" Height="30"/>
             </StackPanel>
         </Border>
     </Grid>

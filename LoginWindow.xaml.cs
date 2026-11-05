@@ -38,12 +38,10 @@ namespace InventoryOfEquipmentInAPolyclinic
             }
 
             using var db = new AppDbContext();
-            // В реальном проекте пароль нужно хэшировать!
             var user = db.Users.FirstOrDefault(u => u.Username == username && u.PasswordHash == password);
 
             if (user != null)
             {
-                // Передаем информацию о пользователе в MainWindow (пока через статическое свойство для простоты)
                 App.CurrentUser = user;
                 DialogResult = true;
                 Close();

@@ -1,0 +1,18 @@
+﻿<Window x:Class="InventoryOfEquipmentInAPolyclinic.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryOfEquipmentInAPolyclinic"
+        mc:Ignorable="d"
+        Title="Настройки подключения" Height="300" Width="450" WindowStartupLocation="CenterScreen">
+        <StackPanel Margin="20">
+            <TextBlock Text="Строка подключения к MariaDB:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox x:Name="ConnectionStringTextBox" Height="60" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Пример: Server=localhost;Port=3306;Database=clinic_inventory;User=root;Password=1234;" 
+                       FontSize="11" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+            <Button Content="Сохранить и перезапустить" Click="SaveButton_Click" Background="#2ECC71" Height="35"/>
+        </StackPanel>
+</Window>

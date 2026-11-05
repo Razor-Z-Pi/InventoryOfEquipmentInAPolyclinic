@@ -28,7 +28,7 @@
                     <TextBox Text="{Binding NewCabinetFloor, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="5,0"/>
                     <TextBlock Text="Номер:" VerticalAlignment="Center"/>
                     <TextBox Text="{Binding NewCabinetNumber, UpdateSourceTrigger=PropertyChanged}" Width="60" Margin="5,0"/>
-                    <Button Content="Добавить" Command="{Binding AddCabinetCommand}" Background="#2ECC71"/>
+                    <Button Content="Добавить" Command="{Binding AddCabinetCommand}" Background="#2ECC71" Width="70" Height="30"/>
                 </StackPanel>
 
                 <ListBox Grid.Row="1" ItemsSource="{Binding Cabinets}" DisplayMemberPath="Name" Margin="10" Background="#F8F9FA"/>
@@ -56,7 +56,7 @@
                     <TextBlock Text="Отдел:" VerticalAlignment="Center"/>
                     <ComboBox ItemsSource="{Binding Departments}" SelectedItem="{Binding SelectedDepartment}" DisplayMemberPath="Name" Width="180" Margin="5,0"/>
 
-                    <Button Content="Добавить" Command="{Binding AddEmployeeCommand}" Background="#2ECC71"/>
+                    <Button Content="Добавить" Command="{Binding AddEmployeeCommand}" Background="#2ECC71" Width="70" Height="30"/>
                 </StackPanel>
 
                 <ListBox Grid.Row="2" ItemsSource="{Binding Employees}" DisplayMemberPath="FullName" Margin="10" Background="#F8F9FA"/>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Проекты\\С#\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj": {}
+    "D:\\Проекты\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj": {}
   },
   "projects": {
-    "D:\\Проекты\\С#\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj": {
+    "D:\\Проекты\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Проекты\\С#\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
+        "projectUniqueName": "D:\\Проекты\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
         "projectName": "InventoryOfEquipmentInAPolyclinic",
-        "projectPath": "D:\\Проекты\\С#\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
+        "projectPath": "D:\\Проекты\\InventoryOfEquipmentInAPolyclinic\\InventoryOfEquipmentInAPolyclinic.csproj",
         "packagesPath": "C:\\Users\\popov\\.nuget\\packages\\",
-        "outputPath": "D:\\Проекты\\С#\\InventoryOfEquipmentInAPolyclinic\\obj\\",
+        "outputPath": "D:\\Проекты\\InventoryOfEquipmentInAPolyclinic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\DeveloperTolls\\VSshared\\NuGetPackages"
@@ -78,6 +78,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
