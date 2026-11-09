@@ -2,6 +2,8 @@
 using System.Data;
 using System.Windows;
 using InventoryOfEquipmentInAPolyclinic.Models;
+using InventoryOfEquipmentInAPolyclinic.Services.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventoryOfEquipmentInAPolyclinic
 {
@@ -16,6 +18,27 @@ namespace InventoryOfEquipmentInAPolyclinic
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            try
+            {
+                using (var db = new AppDbContext())
+                {
+                    // Проверяем, есть ли неприменённые миграции
+                    var pendingMigrations = db.Database.GetPendingMigrations();
+                    if (pendingMigrations.Any())
+                    {
+                        // Применяем все миграции (создаст таблицы, если их нет)
+                        db.Database.Migrate();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка инициализации базы данных: {ex.Message}\n\nПроверьте строку подключения в appsettings.json.",
+                                "Критическая ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                Shutdown();
+                return;
+            }
 
             this.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 

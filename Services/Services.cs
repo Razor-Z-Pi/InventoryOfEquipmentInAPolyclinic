@@ -45,12 +45,6 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
             Departments.Add(new Department { Id = 3, Name = "Мужская консультация" });
             Departments.Add(new Department { Id = 4, Name = "Административно-управленческий персонал (АУП)" });
 
-            // Кабинеты (используем AddressId = 1)
-            Cabinets.Add(new Cabinet { Id = 1, AddressId = 1, Name = "Кабинет терапевта", Floor = 3, CabinetNumber = "301" });
-            Cabinets.Add(new Cabinet { Id = 2, AddressId = 1, Name = "Кабинет гинеколога", Floor = 3, CabinetNumber = "314" });
-            Cabinets.Add(new Cabinet { Id = 3, AddressId = 1, Name = "Лаборатория", Floor = 1, CabinetNumber = "108" });
-            Cabinets.Add(new Cabinet { Id = 4, AddressId = 1, Name = "Стерилизационная", Floor = 1, CabinetNumber = "111" });
-
             // Сотрудники
             Employees.Add(new Employee { Id = 1, FullName = "Иванова Мария Петровна", PositionId = 1, DepartmentId = 1 });
             Employees.Add(new Employee { Id = 2, FullName = "Козлов Иван Валерьевич", PositionId = 2, DepartmentId = 2 });

@@ -53,8 +53,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/InventoryOfEquipmentInAPolyclinic;V1.0.0.0;component/views/dictionariesview.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/InventoryOfEquipmentInAPolyclinic;component/views/dictionariesview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\DictionariesView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

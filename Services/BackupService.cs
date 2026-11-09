@@ -11,7 +11,6 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
 {
     public class BackupData
     {
-        public List<Models.Address> Addresses { get; set; } = new();
         public List<Models.EquipmentStatus> Statuses { get; set; } = new();
         public List<Models.Cabinet> Cabinets { get; set; } = new();
         public List<Models.Position> Positions { get; set; } = new();
@@ -30,7 +29,6 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
 
             var backup = new BackupData
             {
-                Addresses = db.Addresses.ToList(),
                 Statuses = db.Statuses.ToList(),
                 Cabinets = db.Cabinets.ToList(),
                 Positions = db.Positions.ToList(),
@@ -62,12 +60,10 @@ namespace InventoryOfEquipmentInAPolyclinic.Services
             db.Departments.RemoveRange(db.Departments);
             db.Positions.RemoveRange(db.Positions);
             db.Statuses.RemoveRange(db.Statuses);
-            db.Addresses.RemoveRange(db.Addresses);
             db.Users.RemoveRange(db.Users);
             db.SaveChanges();
 
             // Загружаем из бэкапа (сначала справочники, потом зависимые таблицы)
-            db.Addresses.AddRange(backup.Addresses);
             db.Statuses.AddRange(backup.Statuses);
             db.Positions.AddRange(backup.Positions);
             db.Departments.AddRange(backup.Departments);

@@ -40,7 +40,6 @@
                             <!-- Анимация при наведении мыши -->
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="ButtonBorder" Property="Background" Value="#2980B9"/>
-                                <!-- Плавное изменение прозрачности или цвета можно добавить сюда -->
                             </Trigger>
 
                             <!-- Анимация при нажатии (эффект "утопления") -->

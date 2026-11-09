@@ -22,30 +22,6 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FullAddress")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Addresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FullAddress = "Г. Абакан, ул. Джугашвили, 67"
-                        });
-                });
-
             modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.AuditLog", b =>
                 {
                     b.Property<int>("Id")
@@ -74,37 +50,70 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                     b.ToTable("AuditLogs");
                 });
 
-            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", b =>
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Building", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CabinetNumber")
+                    b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Floor")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("adres");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cabinets");
+                    b.ToTable("zdaniya");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            AddressId = 1,
+                            Address = "Г. Абакан, ул. Джугашвили, 67"
+                        });
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BuildingId")
+                        .HasColumnType("int")
+                        .HasColumnName("zdanie_id");
+
+                    b.Property<string>("CabinetNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("nomer_kabineta");
+
+                    b.Property<int>("Floor")
+                        .HasColumnType("int")
+                        .HasColumnName("etazh");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("nazvanie_kabineta");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuildingId");
+
+                    b.ToTable("mesta");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BuildingId = 1,
                             CabinetNumber = "301",
                             Floor = 3,
                             Name = "Кабинет терапевта"
@@ -112,7 +121,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                         new
                         {
                             Id = 2,
-                            AddressId = 1,
+                            BuildingId = 1,
                             CabinetNumber = "314",
                             Floor = 3,
                             Name = "Кабинет гинеколога"
@@ -120,7 +129,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                         new
                         {
                             Id = 3,
-                            AddressId = 1,
+                            BuildingId = 1,
                             CabinetNumber = "108",
                             Floor = 1,
                             Name = "Лаборатория"
@@ -128,7 +137,7 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                         new
                         {
                             Id = 4,
-                            AddressId = 1,
+                            BuildingId = 1,
                             CabinetNumber = "111",
                             Floor = 1,
                             Name = "Стерилизационная"
@@ -139,17 +148,19 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("nazvanie");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("podrazdeleniya");
 
                     b.HasData(
                         new
@@ -178,23 +189,31 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("podrazdelenie_id");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("fio");
 
                     b.Property<int>("PositionId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("dolzhnost_id");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("PositionId");
+
+                    b.ToTable("sotrudniki");
 
                     b.HasData(
                         new
@@ -231,39 +250,49 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CabinetId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("mesto_id");
 
                     b.Property<DateTime>("CommissionDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_vvoda");
 
                     b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("otvetstvennyj_id");
 
                     b.Property<string>("Model")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("model");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("nazvanie");
 
                     b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_vypuska");
 
                     b.Property<string>("SerialNumber")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("serijnyj_nomer");
 
                     b.Property<int>("ServiceLife")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("srok_sluzhby_let");
 
                     b.Property<int>("StatusId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("status_id");
 
                     b.HasKey("Id");
 
@@ -273,24 +302,26 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Equipments");
+                    b.ToTable("oborudovanie");
                 });
 
             modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.EquipmentStatus", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("nazvanie");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Statuses");
+                    b.ToTable("statusy_oborudovaniya");
 
                     b.HasData(
                         new
@@ -310,21 +341,61 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                         });
                 });
 
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Maintenance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("kommentarij");
+
+                    b.Property<DateTime>("DateNext")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_sleduyushchego");
+
+                    b.Property<DateTime>("DateTo")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_to");
+
+                    b.Property<int>("EquipmentId")
+                        .HasColumnType("int")
+                        .HasColumnName("oborudovanie_id");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("tip");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EquipmentId");
+
+                    b.ToTable("to_obsluzhivanie");
+                });
+
             modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Position", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("nazvanie");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Positions");
+                    b.ToTable("dolzhnosti");
 
                     b.HasData(
                         new
@@ -390,25 +461,107 @@ namespace InventoryOfEquipmentInAPolyclinic.Migrations
                         });
                 });
 
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", b =>
+                {
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Building", "Building")
+                        .WithMany("Cabinets")
+                        .HasForeignKey("BuildingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Building");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Employee", b =>
+                {
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Position", "Position")
+                        .WithMany("Employees")
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Position");
+                });
+
             modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Equipment", b =>
                 {
-                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", null)
-                        .WithMany()
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", "Cabinet")
+                        .WithMany("Equipments")
                         .HasForeignKey("CabinetId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Employee", null)
-                        .WithMany()
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Employee", "Employee")
+                        .WithMany("Equipments")
                         .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.EquipmentStatus", null)
-                        .WithMany()
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.EquipmentStatus", "Status")
+                        .WithMany("Equipments")
                         .HasForeignKey("StatusId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cabinet");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Maintenance", b =>
+                {
+                    b.HasOne("InventoryOfEquipmentInAPolyclinic.Models.Equipment", "Equipment")
+                        .WithMany("Maintenances")
+                        .HasForeignKey("EquipmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Equipment");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Building", b =>
+                {
+                    b.Navigation("Cabinets");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Cabinet", b =>
+                {
+                    b.Navigation("Equipments");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Department", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Employee", b =>
+                {
+                    b.Navigation("Equipments");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Equipment", b =>
+                {
+                    b.Navigation("Maintenances");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.EquipmentStatus", b =>
+                {
+                    b.Navigation("Equipments");
+                });
+
+            modelBuilder.Entity("InventoryOfEquipmentInAPolyclinic.Models.Position", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

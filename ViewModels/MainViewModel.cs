@@ -27,7 +27,7 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
     {
         private readonly AppDbContext _db;
 
-        // Коллекция для DataGrid (используем наш новый класс)
+        // Коллекция для DataGrid
         [ObservableProperty]
         private ObservableCollection<EquipmentDisplay> _equipmentsDisplay;
 
@@ -98,6 +98,11 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
 
         [ObservableProperty] private EquipmentStatus? _selectedEquipmentStatus;
 
+        [ObservableProperty] private ObservableCollection<Maintenance> _maintenances;
+        [ObservableProperty] private string _newMaintenanceType = "плановое";
+        [ObservableProperty] private DateTime _newMaintenanceDate = DateTime.Now;
+        [ObservableProperty] private string _newMaintenanceComment = string.Empty;
+
         // Конструктор для XAML (создает свой контекст)
         public MainViewModel() : this(new AppDbContext())
         {
@@ -113,6 +118,7 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
             Employees = new ObservableCollection<Employee>();
             Positions = new ObservableCollection<Position>();
             Departments = new ObservableCollection<Department>();
+            Maintenances = new ObservableCollection<Maintenance>();
 
             StatusSeries = Array.Empty<ISeries>();
             CabinetSeries = Array.Empty<ISeries>();
@@ -166,6 +172,19 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
                 SelectedStatus = Statuses.FirstOrDefault();
                 SelectedCabinet = Cabinets.FirstOrDefault();
                 SelectedEmployee = Employees.FirstOrDefault();
+
+                // Загружаем ТО только для выбранного оборудования
+                if (SelectedEquipment != null)
+                {
+                    var toData = await Task.Run(() =>
+                        _db.Maintenances
+                           .Where(m => m.EquipmentId == SelectedEquipment.Id)
+                           .OrderByDescending(m => m.DateTo)
+                           .ToList());
+
+                    Maintenances.Clear();
+                    foreach (var item in toData) Maintenances.Add(item);
+                }
 
                 // Загружаем само оборудование с "JOIN"
                 var equipments = await Task.Run(() =>
@@ -248,7 +267,7 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
             // Обновляем UI-поток
             System.Windows.Application.Current.Dispatcher.Invoke(() =>
             {
-                // 1. Круговая диаграмма
+                // Круговая диаграмма
                 StatusSeries = statusGroups.Select(g => (ISeries)new PieSeries<int>
                 {
                     Values = new[] { g.Count },
@@ -258,7 +277,7 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
                     DataLabelsPosition = LiveChartsCore.Measure.PolarLabelsPosition.Middle
                 }).ToArray();
 
-                // 2. Столбчатая диаграмма
+                // Столбчатая диаграмма
                 CabinetSeries = new ISeries[]
                 {
                 new ColumnSeries<int>
@@ -553,7 +572,6 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
                 Name = NewCabinetName,
                 Floor = NewCabinetFloor,
                 CabinetNumber = NewCabinetNumber,
-                AddressId = 1 // Берем первый адрес
             };
 
             _db.Cabinets.Add(newCab);
@@ -756,7 +774,7 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
                 try
                 {
                     PdfService.GenerateWriteOffAct(SelectedEquipment, dialog.FileName);
-                    ShowToast("Акт списания успешно сгенерирован!");
+                    ShowToast("Акт списания успешно сгенерирован!!!");
 
                     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(dialog.FileName) { UseShellExecute = true });
                 }
@@ -765,6 +783,28 @@ namespace InventoryOfEquipmentInAPolyclinic.ViewModels
                     System.Windows.MessageBox.Show($"Ошибка генерации PDF: {ex.Message}");
                 }
             }
+        }
+
+        [RelayCommand]
+        private async Task AddMaintenanceAsync()
+        {
+            if (SelectedEquipment == null) return;
+
+            var newTo = new Maintenance
+            {
+                EquipmentId = SelectedEquipment.Id,
+                DateTo = NewMaintenanceDate,
+                DateNext = NewMaintenanceDate.AddMonths(6), // Например, следующее через 6 мес
+                Type = NewMaintenanceType,
+                Comment = NewMaintenanceComment
+            };
+
+            _db.Maintenances.Add(newTo);
+            await _db.SaveChangesAsync();
+
+            Maintenances.Insert(0, newTo); // Добавляем в начало списка
+            NewMaintenanceComment = string.Empty;
+            ShowToast("Запись о ТО добавлена!!!");
         }
     }
 }

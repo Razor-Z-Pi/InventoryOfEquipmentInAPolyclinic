@@ -13,7 +13,7 @@
             <ColumnDefinition Width="300"/>
             <!-- Карточка -->
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -66,7 +66,7 @@
         </Border>
 
         <!-- Таблица DataGrid -->
-        <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="10">
+        <Border Grid.Row="1" Grid.Column="0" Background="White" CornerRadius="10" Padding="10">
             <DataGrid ItemsSource="{Binding EquipmentsDisplay}"
                       SelectedItem="{Binding SelectedEquipment}"
                       SelectionMode="Extended"
@@ -111,8 +111,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Кабинет" Binding="{Binding CabinetName}" Width="150"/>
-                    <DataGridTextColumn Header="Ответственный" Binding="{Binding EmployeeName}" Width="200"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="Кабинет" Binding="{Binding CabinetName}" Width="150"/>
+                    <DataGridTextColumn IsReadOnly="True" Header="Ответственный" Binding="{Binding EmployeeName}" Width="200"/>
                 </DataGrid.Columns>
 
                 <DataGrid.RowStyle>
@@ -132,44 +132,77 @@
             </DataGrid>
         </Border>
 
+        <!-- Правая панель: Карточка деталей -->
         <Border Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="10" Padding="15" Margin="10,0,0,0">
-            <StackPanel>
-                <TextBlock Text="Детали оборудования" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="Детали оборудования" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
 
-                <TextBlock Text="Название:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.Name}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Название:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.Name}" FontSize="16" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Модель:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.Model}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Модель:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.Model}" FontSize="16" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Серийный номер:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.SerialNumber}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Серийный номер:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.SerialNumber}" FontSize="16" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Статус:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.StatusName}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Статус:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.StatusName}" FontSize="16" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Кабинет:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.CabinetName}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Кабинет:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.CabinetName}" FontSize="16" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Ответственный:" FontWeight="Bold" Foreground="Gray"/>
-                <TextBlock Text="{Binding SelectedEquipment.EmployeeName}" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="Ответственный:" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBlock Text="{Binding SelectedEquipment.EmployeeName}" FontSize="16" Margin="0,0,0,10"/>
 
-                <!-- Срок службы -->
-                <Border Background="#F8F9FA" CornerRadius="5" Padding="10" Margin="0,10,0,0">
-                    <StackPanel>
-                        <TextBlock Text="Срок службы:" FontWeight="Bold" Foreground="Gray"/>
-                        <TextBlock Text="{Binding SelectedEquipment.LifeStatus}" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding SelectedEquipment.ExpirationDate, StringFormat='Дата окончания: {0:dd.MM.yyyy}'}" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
+                    <!-- Срок службы -->
+                    <Border Background="#F8F9FA" CornerRadius="5" Padding="10" Margin="0,10,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Срок службы:" FontWeight="Bold" Foreground="Gray"/>
+                            <TextBlock Text="{Binding SelectedEquipment.LifeStatus}" FontSize="16" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding SelectedEquipment.ExpirationDate, StringFormat='Дата окончания: {0:dd.MM.yyyy}'}" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="Изменить статус:" FontWeight="Bold" Foreground="Gray" Margin="0,10,0,5"/>
+                    <ComboBox ItemsSource="{Binding Statuses}" 
+                              SelectedItem="{Binding SelectedEquipmentStatus, UpdateSourceTrigger=PropertyChanged}"
+                              DisplayMemberPath="Name" 
+                              Width="200" HorizontalAlignment="Left"/>
+                    <Button Content="Применить статус" Command="{Binding UpdateStatusCommand}" Background="#F39C12" Margin="0,5,0,0" Width="170" Height="30"/>
+
+                    <!-- ========================================== -->
+                    <!-- НОВЫЙ БЛОК: Техобслуживание -->
+                    <!-- ========================================== -->
+                    <Separator Margin="0,15,0,10" Background="#E0E0E0"/>
+
+                    <TextBlock Text="История ТО:" FontWeight="Bold" Foreground="Gray" Margin="0,0,0,5"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <ComboBox SelectedItem="{Binding NewMaintenanceType}" Width="120" Margin="0,0,5,0">
+                            <ComboBoxItem Content="плановое"/>
+                            <ComboBoxItem Content="внеплановое"/>
+                        </ComboBox>
+                        <DatePicker SelectedDate="{Binding NewMaintenanceDate}" Width="110" Margin="0,0,5,0"/>
+                        <Button Content="+" Command="{Binding AddMaintenanceCommand}" Background="#3498DB" Padding="10,2" Width="30"/>
                     </StackPanel>
-                </Border>
 
-                <TextBlock Text="Изменить статус:" FontWeight="Bold" Foreground="Gray" Margin="0,10,0,5"/>
-                <ComboBox ItemsSource="{Binding Statuses}" 
-                          SelectedItem="{Binding SelectedEquipmentStatus, UpdateSourceTrigger=PropertyChanged}"
-                          DisplayMemberPath="Name" 
-                          Width="200" HorizontalAlignment="Left"/>
-                <Button Content="Применить статус" Command="{Binding UpdateStatusCommand}" Background="#F39C12" Margin="0,5,0,0" Width="170" Height="30"/>
-            </StackPanel>
+                    <DataGrid ItemsSource="{Binding Maintenances}" 
+                              AutoGenerateColumns="False" 
+                              IsReadOnly="True" 
+                              Height="150" 
+                              BorderThickness="1"
+                              BorderBrush="#E0E0E0"
+                              AlternatingRowBackground="#F8F9FA">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding DateTo, StringFormat=\{0:dd.MM.yyyy\}}" Width="80"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="100"/>
+                            <DataGridTextColumn Header="Комментарий" Binding="{Binding Comment}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </UserControl>
